@@ -1,7 +1,7 @@
 The majority of the files in this repository were used to configure the network depicted below.
 
 !/Desktop/GitHub/Cybersecurity/Diagrams/ELKStackDiagram
-!https://github.com/kldawson53/Cybersecurity/blob/master/Diagrams/ELKStack%20Diagram.png
+!https://github.com/ELucey-hub/Cyber_Security_Projects/blob/main/ELK%20Network%20Diagram.jpg
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -27,6 +27,7 @@ Load balancing ensures that the application will be highly redundant, in additio
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the server and system application.
 - Filebeat monitors specified log files and collects log events._
 - Metricbeat periodically collects metrics from an operating stystem and from services running on a server.  It takes the metrics and statistics it collects and ships them to specified output, such as Elasticsearch or Logstash.  [See elasticsearch.co/guide]_
+
 The configuration details of each machine may be found below.
 | Name      | Function  | IP Address | Operating System |
 |-----------|-----------|------------|------------------|
@@ -36,6 +37,7 @@ The configuration details of each machine may be found below.
 | Web-3     | Webserver | 10.0.0.4   | "                |
 | ElkServer | Elk w/    | 10.1.0.4   | "                |
 | Docker    |           |            |                  |
+
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
 Only the Jump-box-provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address(es):
@@ -43,6 +45,7 @@ Only the Jump-box-provisioner machine can accept connections from the Internet. 
 Machines within the network can only be accessed by SSH.
 - The Elk VM can be accessed from the Ansible container on the Jump-box-provisioner (52.249.188.139; 10.0.0.4)._
 A summary of the access policies in place can be found in the table below.
+
 | Name       	| Publicly Accessible 	| Allowed IP Addresses 	|
 |------------	|---------------------	|----------------------	|
 | Jump Box   	| Yes                 	| 138.91.227.144         	|
@@ -50,6 +53,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-2      	| No                  	| 10.0.0.6 10.0.0.5    	|
 | Web-3      	| No                  	| 10.0.0.4 10.0.0.5    	|
 | Elk Server 	| No                  	| 10.0.0.5             	|
+
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - This approach employs Infrastructure as code (IaC), which allows each component to be individually defined with code.  So, from a security standpoint, we can quickly bring a particular piece of infrastructure up and running within a few minutes by running the code that defines the piece of infrastructure.  Conversely, if the infrastructure is compromised, we can destroy it and deploy a new version within minutes.  As such, we can clearly build in security protocols from the ground up.
@@ -61,7 +65,7 @@ The playbook implements the following tasks:
 - Downloads the Docker container called sebp/elk:761.
 - Configures the container to start with the following port mappings: 5601:5601, 9200:9200, 5044:5044
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-!https://github.com/kldawson53/Cybersecurity/blob/master/Ansible/Images/Docker_ps_output.png.PNG
+
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - Web-1, 10.0.0.7
